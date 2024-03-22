@@ -1,0 +1,14 @@
+{
+    "name": "verdaccio-run",
+    "version": "1.0.0",
+    "dependencies": {
+        "verdaccio": "^5.29.2"
+    },
+    "scripts": {
+        "register": "npm set registry http://localhost:4873",
+        "start-linux": "bash ./launch.sh",
+        "start-mac": "zsh ./launch.sh",
+        "start-windows": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./launch.ps1",
+        "unregister": "npm set registry https://registry.npmjs.org/"
+    }
+}
