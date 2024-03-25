@@ -44,18 +44,33 @@ server for Microsoft Windows, Apple Mac, and Linux:
 }
 ```
 
-## Distribution
+## Build a Cache Image
 
-### Option 1: Copy the project folder to each computer
+Build a project to prime the storage for Verdacci, and distribute it:
+
+1. Change the npm registry to the local address and launch Verdaccio (use the scripts above). 
+1. Create a new project with a *package.json* file; only name an version are required attributes.
+1. Install all of the packages required for the project.
+1. Shut down Verdaccio.
+1. Zip the Verdaddio-run project folder and distribute it to the other computers; this will include Verdaccio and the storage cache.
+1. Proceed with distribution (next).
+
+## Distribution
 
 After priming the project folder with the necessary packages the
 the folder may be copied (usb, network, etc.) to a large number of computers working in a group (class?) where
 network connectivity is limited.
 Then each computer has its owned primed copy of the local cache of packages.
 
-Make sure that each computer also has Git, Node.js, and the IDE for development.
+Make sure that each target computer also has any necessary tools for development.
 
-### Options 2: Run a local server on the network
+### Option 1: Copy the project folder to each computer
+
+Zip the verdaccio-run folder to copy it; copying a million individual files across the network or to a USB flash drive will take too long.
+
+Copy the zip file to each computer, unzip it to a folder, change the npm registry, and run the Verdaccio server locally.
+
+### Option 2: Run one local server on the network
 
 If the local network is good (just poor Internet), then an
 alternative is to place this on one computer on a local network and have everyone point to it for the
