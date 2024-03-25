@@ -6,6 +6,7 @@
     },
     "scripts": {
         "register": "npm set registry http://localhost:4873",
+        "set-executionpolicy": "@powershell -NoProfile -ExecutionPolicy Unrestricted CurrentUser",
         "start-linux": "bash ./launch.sh",
         "start-mac": "zsh ./launch.sh",
         "start-windows": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./launch.ps1",

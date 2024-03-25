@@ -30,13 +30,18 @@ The steps to setting this up are:
 1. Start the server with the appropriate *npm run \<command>*.
 1. Prime the package server cache by running *npm install package ...* for each package that will be used during development.
 
+In Powershell the execution policy may prevent scripts in the local directory from running.
+There is a command in the package.json file (below) to change the setting and allow local scripts.
+
 The package.json file in this project provides commands to change npm locally to use this local package server,
-set it back to https://registry.npmjs.org, and start the
-server for Microsoft Windows, Apple Mac, and Linux:
+set it back to https://registry.npmjs.org,
+change the execution policy for local scripts in Microsoft Windows,
+and start the server for Microsoft Windows, Apple Mac, and Linux:
 
 ```
 "scripts": {
     "register": "npm set registry http://localhost:4873",
+    "set-executionpolicy": "@powershell -NoProfile -ExecutionPolicy Unrestricted CurrentUser",
     "start-linux": "bash ./launch.sh",
     "start-mac": "zsh ./launch.sh",
     "start-windows": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./launch.ps1",
