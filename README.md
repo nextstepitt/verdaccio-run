@@ -20,8 +20,7 @@ will be available offline or with limited connectivity.
 ## Setup
 
 Each computer where the package server will be used should have installed:
-* Git
-* Node.js (preferrably install nvm-windows and then Node.js)
+* Node.js (preferrably install nvm-windows and then the current LTS Node.js)
 * Visual Studio Code is the preferred IDE, of course others may be substituted.
 
 The steps to setting this up are:
@@ -55,7 +54,7 @@ Build a project to prime the storage for Verdacci, and distribute it:
 
 1. Change the npm registry to the local address and launch Verdaccio (use the scripts above). 
 1. Create a new project with a *package.json* file; only name an version are required attributes.
-1. Install all of the packages required for the project.
+1. Install all of the packages required for the project; if you are using a framework (create-react-app, vite), remember to create a project with the settings you need using the framework installer to pick up those packages. For example, vite requires both running the installation and running "npm install".
 1. Shut down Verdaccio.
 1. Zip the Verdaddio-run project folder and distribute it to the other computers; this will include Verdaccio and the storage cache.
 1. Proceed with distribution (next).
